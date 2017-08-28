@@ -10,9 +10,19 @@ I present a case study of moving matter that generates gravitational  waves. The
 
 \section{The 3+1 Split}
 
-To study my cases, I use the screen manifold formalism.
+To study my cases, I use the screen manifold formalism. Say the causal structure of the matter theory is given by the principal polynomial $P$
 
-There are two relevant bases of the tangent space: the orthogonal basis $\{T, e_\alpha\}$ and the foliation basis $\{\dot{X} , \tilde{e}_\alpha\}$, with the corresponding cotangent space bases $\{ n, \epsilon^\alpha\}$ and $\{\kappa, \tilde{\epsilon}^\alpha \}$ respectively. These bases are related by
+There are two relevant bases of the tangent space: the orthogonal basis $\{T, e_\alpha\}$ and the foliation basis $\{\dot{X} , \tilde{e}_\alpha\}$, with the corresponding cotangent space bases $\{ n, \epsilon^\alpha\}$ and $\{\kappa, \tilde{\epsilon}^\alpha \}$ respectively. 
+
+The defining property of the orthogonal basis is
+
+\begin{align}
+	P \left( n , \dots, n \right) &:= 1 \label{frame_cond_1}\\ 
+	P \left( \epsilon^\alpha , n,  \dots, n \right) &:= 0 \label{frame_cond_2}
+\end{align}
+
+
+The the two bases are related by
 
 \begin{align}	
 	\dot{X} &= N T + N^\alpha e_\alpha\\
@@ -45,6 +55,8 @@ This section should contain a recipe which explains how to switch from the space
 
 The appropriate gravitational theory for a given matter theory depends on the causal structure (i.e. the principal polynomial $P$) of that matter theory, and is obtained by insisting on consistent dynamics. 
 
+More precisely, a gravitational theory simply describes the dynamics of the causal structure of matter dynamics - it describes the dynamics of $P$.
+
 $P$ is the only relevant geometric object; the Legendre map $L$, which maps vectors to covectors, is obtained from $P$ by
 
 \begin{equation}
@@ -70,12 +82,12 @@ Metric specific formulae:
 	g_{\alpha \beta} &= - \gamma^{\alpha \beta} - \varphi^{\alpha \beta}
 \end{align}
 
-\subsection{The Electromagnetic field}
+\subsection{The Electromagnetic field} \label{metric_em}
 
 This subsections contains the derivation of the Hamiltonian of the electromagnetic field. The laws of Maxwells electromagnetism are condensed in the action
 
 \begin{align}
-	S &= \frac{1}{16 \pi} \int \mathrm{d}^4 x \left( - \det{g^{\cdot \cdot}} \right)^{-\frac{1}{2}} F_{ab} F_{cd} g^{ac} g^{bd}\\
+	S &= \frac{1}{16 \pi} \int \mathrm{d}^4 x \left( - \det{g^{\cdot \cdot}} \right)^{-\frac{1}{2}} F_{ab} F_{cd} \, \, g^{ac} g^{bd}\\
 	F_{ab} &:= \partial_a A_b - \partial_b A_a 
 \end{align}
 
@@ -182,6 +194,7 @@ For scenarios including only weak gravitational fields, I obtain a decent approx
 \end{equation}
 
 
+where $H^\alpha = \frac{1}{2}\epsilon^{\alpha \beta \gamma} F^{(3)}_{\alpha \beta} $
 
 \subsection{Point Particles}
 
@@ -196,20 +209,21 @@ This decomposition is defined such that $v = 	\frac{\mathrm{d} \lambda (t)}{\mat
 The next step towards the autonomous screen manifold formalism requires to express the action that governs the dynamics of the particle solely in screen manifold quantities. For metric geometry, the universal action for a point mass in the presence of the electromagnetic field reads
 
 \begin{equation}
-	S = \int \mathrm{d}\tau  \, \, 
+	S = \int \mathrm{d}\tau  \left[
 	m \left( 
 	g_{a b}\left( \gamma \right)
 	\frac{\mathrm{d} \gamma^a\left( \tau \right) }{\mathrm{d}\tau}
 	\frac{\mathrm{d} \gamma^b\left( \tau \right) }{\mathrm{d}\tau} \right)^{\frac{1}{2}}
 	+ e A_a \left( \gamma  \right) 
 	\frac{\mathrm{d} \gamma^a\left( \tau \right) }{\mathrm{d}\tau} 
+	\right]
 \end{equation}
 
 Now parametrise $\gamma$ with $t$ and use the foliation frame to obtain the screen manifold action
 
 \begin{equation}
 \begin{split}
-	S = \int \mathrm{d}\tau  \, \, 
+	S = \int \mathrm{d}\tau
 	& m \left( 
 	N^2 + g^{(3)}_{\alpha \beta} N^{\alpha} N^{\beta}
 	+ 2 g^{(3)}_{\alpha \beta} v^\alpha N^\beta + g^{(3)}_{\alpha \beta} v^\alpha v^\beta 
@@ -264,12 +278,299 @@ where $E_k := \sqrt{k^2+ m^2}$. Accommodatingly, knowledge of the zeroth order o
 	- N^\alpha p_\alpha + \frac{1}{2 E_k} \varphi_{\alpha \beta} k^\alpha k^\beta + \mathcal{O} \left(\varphi^2 \right)
 \end{equation}
 
-where all occurring fields are evaluated at the position $\lambda$ of the particle
+where all occurring fields are evaluated at the position $\lambda$ of the particle.
 
-\subsection{The Motion of Two Charged Point Masses}
+\subsection{The Motion of Two Charged Point Masses} \label{sec_mot_bin}
+
+The Hamiltonian of the complete system containing both charged point masses and electromagnetic fields is the sum of the respective Hamiltonians:
+
+\begin{equation}
+	H_{Matter}  = \sum_i H^{(i)}_{Point \,Particle} + H_{Electromagnetism}
+\end{equation}
+
+
+This Hamiltonian is a screen manifold object, which generates the dynamics on the screen manifold with respect to the embedding parameter $t$.
+
+The Hamiltonian contains the gravitational fields to linear order, so the resulting equations of motion describe the dynamics of electromagnetic fields and point masses in presence of weak gravitational fields. However - as I shall elaborate on later - to consistently analyse gravitational waves in linearised theory, the dynamics of the matter that generates those waves must happen on a flat background. Therefore, for the purpose of determining the equations of motion for the present matter and henceforth the dynamics of the source system, I shall neglect any gravitational fields. 
+
+The Hamiltonian of one charged point mass and the electromagnetic field in a flat background is
+
+\begin{equation}
+\begin{split}
+		H = &- \left(E_k + e \phi \left( \lambda \right) \right)\\
+		&- \int \mathrm{d}^3 y \left( 2 \pi \gamma_{\alpha \beta} \Pi^\alpha \Pi^\beta + \frac{1}{8 \pi}\gamma_{\alpha \beta} H^\alpha H^\beta
+		+ \phi \partial_\alpha \Pi^\alpha \right)
+\end{split}
+\end{equation}
+
+Using the Hamiltonian field equations $\dot{A}_\alpha = \delta H / \delta \Pi^\alpha$ and $\dot{\Pi}^\alpha = -\delta H / \delta A_\alpha$,  the constraint equation $0 = \delta H / \delta \phi$ and the defining equation of $H^\alpha$,  I obtain Maxwells equations
+
+\begin{align}
+	\dot{E}_\alpha - \left(\partial \times H \right)_\alpha &= 4 \pi e 
+	\dot{\lambda}_\alpha \delta_\lambda\\
+		\dot{H}_\alpha +  \left( \partial \times E \right)_\alpha &= 0\\
+	\partial_\alpha E^\alpha &= - 4 \pi e \delta_\lambda\\ 
+	\partial_\alpha H^\alpha &= 0
+\end{align}
+
+for the electromagnetic fields on the screen manifold, where $E^\alpha := 4 \pi \Pi^\alpha = \partial_\alpha \phi - \dot{A}_\alpha $. Further, combining the Hamiltonian equations $\dot{q} = \partial H / \partial p$ and $\dot{p} = - \partial H / \partial q$ for the point mass, I obtain 
+
+\begin{equation}
+	\frac{\mathrm{d}}{\mathrm{d}t} 
+	\left( \frac{m v_\alpha}{\sqrt{1 - v^2 }}\right)
+	= -e \left[ \left(v \times H \right)_\alpha + E_\alpha \right] 
+\end{equation} 
+
+The force on the right hand side is the familiar Lorentz Force.
+
+With the equations of motion at hand, I shall next present a particular solution, namely the slowly orbiting binary system. Slowly moving point masses move with velocities much less than the speed of light, e.g.  $ v \ll 1 $ in units where $c = 1$. For such masses, I shall therefore neglect all but the leading order contribution in $v$.
+
+A point charge $e_1$ at the position $\lambda_1$, moving with a velocity $v_1$, generates an electric field 
+
+\begin{equation}
+	E^\alpha(y) = e_1 \frac{y^\alpha - \lambda_1^\alpha }{\left| y - \lambda_1\right|^3} 
+	+ \mathcal{O}\left(v_1^2 \right)
+\end{equation}
+
+and a magnetic field
+
+\begin{equation}
+	H^\alpha = \mathcal{O}\left(v_1 \right)
+\end{equation}
+
+according to Landau and Lifshitz. A second particle at position $\lambda_2$ with charge $e_2$, mass $m_2$ and velocity $v_2$ exposed to the field of the first particle then obeys 
+
+\begin{equation} \label{eom_pp_newt}
+	m_2 \dot{v_2}^\alpha = e_1 e_2 \frac{\left( \lambda_1 - \lambda_2\right)^\alpha}{\left| \lambda_1 - \lambda_2\right|^3} + \mathcal{O}\left(v^2\right)
+\end{equation}
+
+Of course, the situation of the second particle is totally similar; I obtain an equation for its velocity simply by exchanging the labels $1$ and $2$ in eq. \ref{eom_pp_newt}. 
+
+Defining $\lambda_{\text{rel}} = \lambda_1 - \lambda_2$ and $\mu = m_1 m_2 / \left( m_1 + m_2 \right)$, I rewrite the equations of motion for the system as
+
+\begin{align}
+	\mu \frac{\mathrm{d}^2}{\mathrm{d}t^2} \lambda_{\text{rel}}^\alpha 
+	&= e_1 e_2 \frac{\lambda_{\text{rel}}^\alpha}{\left| \lambda_{\text{rel}} \right|^3} \label{eom_rel}\\
+	\frac{\mathrm{d}^2}{\mathrm{d}t^2} \left( m_1 \lambda_1 + m_2 \lambda_2 \right)^\alpha 
+	&= 0 \label{eom_com}
+\end{align}
+
+Eq. \ref{eom_com} allows the solution $m_1 \lambda_1 + m_2 \lambda_2 = 0$ which corresponds to a resting centre of mass.
+
+The ansatz for circular motion
+
+\begin{align}
+	\lambda_{\text{rel}}  
+	= d\begin{pmatrix}
+	\cos{\omega t}\\ \sin{\omega t}\\ 0
+	\end{pmatrix}
+\end{align}
+
+solves eq. \ref{eom_rel} for a frequencies $\omega = \pm \sqrt{- e_1 e_2 / \mu d^3}$. Therefore, an particular approximate solution (realistic as long as the velocities are very small) of the flat space equations of motion is given by
+
+\begin{align}
+	\lambda_1 &= \frac{\mu}{m_1}
+	d\begin{pmatrix}
+	\cos{\sqrt{- e_1 e_2 / \mu d^3} t}\\ \sin{\sqrt{- e_1 e_2 / \mu d^3} t}\\ 0
+	\end{pmatrix}\\
+	\lambda_2 &= \frac{\mu}{m_2}
+	d\begin{pmatrix}
+	\cos{\sqrt{- e_1 e_2 / \mu d^3} t}\\ \sin{\sqrt{- e_1 e_2 / \mu d^3} t}\\ 0
+	\end{pmatrix}\\
+	E^\alpha \left( y \right) &= 
+	e_1 \frac{y^\alpha - \lambda_1^\alpha }{\left| y - \lambda_1\right|^3} 
+	+ e_1 \frac{y^\alpha - \lambda_1^\alpha }{\left| y - \lambda_1\right|^3} \\
+	H^\alpha &= 0 
+\end{align}
+
+which shall henceforth be analysed with respect it's ability to generate waves in the gravitational fields.
+
 
 \subsection{The Generation of Gravitational Waves in Metric Spacetime}
 
+
+
 \section{Orbiting Charges in Weakly Birefringent Spacetime}
 
+How would gravity work if the electromagnetic field obeyed the equations of motion of birefringent electrodynamics? These equations feature a different causal structure than the familiar light cone of Maxwell electrodynamics, namely a double light cone. The appropriate gravitational theory, i.e. the  dynamics of this double cone, has been determined as part of the constructive gravity program.
+
+In this section, I shall firstly implement the screen manifold formalism for birefringent electrodynamics. Then, I shall investigate the affiliated point particle theory, which also features the double cone as its causal structure. Finally, I shall investigate how the system I presented in sec. \ref{sec_mot_bin} generates waves in the gravitational fields that make up the causal structure.
+
+\subsection{The Electromagnetic Field}
+
+Birefringent electrodynamics is a generalisation of Maxwells electrodynamics: just as Maxwells theory, birefringent electrodynamics features a linear equation of motion and thus shares the superposition principle, but in contrast to Maxwell theory, it allows for birefringence in vacua.
+
+In birefringent electrodynamics, the dynamics of the electromagnetic potential $A_a$ are controlled by the action 
+
+\begin{equation} \label{act_gled}
+	S = \frac{1}{32 \pi} \int \mathrm{d}^4 x \omega F_{a b} F_{c d} \, \,
+	G^{a b c d}
+\end{equation}
+
+where $F_{a b} = \partial_a A_b - \partial_b A_a $ as usual, and 
+
+\begin{equation}
+	\omega = \left( \frac{1}{4 !} G^{a b c d} \epsilon_{a b c d} \right)^{-1}
+\end{equation}
+
+ $G^{a b c d}$ is called the area metric, and features the symmetries
+
+\begin{equation}
+	G^{a b c d} = G^{c d a b} = - G^{b a c d}	
+\end{equation}
+
+Implementing these symmetries in the expansion of $G$ in the orthogonal basis yields 
+
+\begin{equation}
+	\begin{split}
+		G^{a b c d} 
+		&= 4 G^{\beta \delta} T^{[a} e_\beta^{b]} T^{[c} e_\beta^{b]}\\
+		&+ 2 G^{\beta \gamma \delta} T^{[a} e_\beta^{b]} e_\gamma^{c} e_\delta^{d}
+		+ 2 G^{\alpha \beta \delta} e_\alpha^a e_\beta^{b} T^{[c} e_\delta^{d]}\\
+		&+ G^{\alpha \beta \gamma \delta} e_\alpha^a e_\beta^{b]} e_\gamma^{c} e_\delta^{d}
+	\end{split}   
+\end{equation}
+
+where
+
+\begin{align}
+	G^{\beta \delta} 
+	&:= G \left( n, \epsilon^\beta, n, \epsilon^\delta \right)\\
+	G^{\beta \gamma \delta} 
+	&:= G \left( n, \epsilon^\beta, \epsilon^\gamma, \epsilon^\delta \right)\\
+	G^{\alpha \beta \gamma \delta} 
+	&:= G \left( \epsilon^\alpha, \epsilon^\beta, \epsilon^\gamma, \epsilon^\delta \right)
+\end{align}
+
+Now, I again undertake the construction of a screen manifold Hamiltonian that generates the same dynamics as the spacetime action \ref{act_gled}. The definition of the screen manifold fields $\phi$ and $A_\alpha$, as well as the expressions of $F_{ 0 \beta}$ and $F_{\alpha \beta}$ in terms of $N, N^\alpha, \dot{A}_\alpha$ and $F^{(3)}_{\alpha \beta}$, are the same as in sec. \ref{metric_em}
+
+For later convenience, I shall at this point explicitly reduce the action \ref{act_gled} by a zero contribution. Since
+
+\begin{equation}
+	\int \mathrm{d}^4 x \epsilon^{a b c d} F_{a b} F_{c d} 
+	= \int \mathrm{d}^4 x \epsilon^{a b c d} \partial_a A_b \partial_c A_d
+	= - \int \mathrm{d}^4 x \epsilon^{a b c d} \partial_c \partial_a A_b A_d
+	= 0
+\end{equation}
+
+using integration by parts, the contribution of the totally antisymmetric part of $G$ to the action vanishes and might as well be explicitly subtracted. The action then becomes
+
+\begin{equation} 
+	S = \frac{1}{32 \pi} \int \mathrm{d}^4 x \omega F_{a b} F_{c d} \, \,
+	\left[ G^{a b c d} + \frac{1}{4!} \epsilon^{a b c d} G^{m n o p} \epsilon_{m n o p}
+	\right]
+\end{equation}
+
+The weird $+$ sign arises due to convention \ref{conv_eps}. Expressed only in screen manifold fields and coordinates, the action becomes
+
+\begin{equation} 
+\begin{split}
+	S = \frac{1}{32 \pi} \int \mathrm{d}^4 x \,\,\omega 
+	[ 
+	&4 G^{\beta \delta} F_{0 \beta} F_{0 \delta} \\
+	&+ \left( 
+	2 \left( G^{\beta \gamma \delta} + G^{ \gamma \delta \beta} \right)
+	- \frac{4 N}{\omega} \epsilon^{\beta \gamma \delta}
+	\right) F_{0 \beta} F_{\gamma \delta}\\
+	&+ G^{\alpha \beta \gamma \delta} F_{\alpha \beta} F_{\gamma \delta}
+	-  \frac{4 N^\mu}{\omega} 
+	\epsilon^{\alpha \beta \gamma} F_{\mu \alpha} F_{\beta \gamma}
+	]
+\end{split}
+\end{equation}
+
+The canonical momentum is
+
+\begin{equation}
+	\Pi^\mu = \frac{\omega}{4 \pi N} 
+	\left[ G^{\mu \nu} F_{0 \nu}
+	+ \left( \frac{1}{2} G^{ \mu \alpha \beta} 
+	- \frac{N}{2 \omega} \epsilon_{ \mu \alpha \beta}
+	\right)
+	F_{\alpha \beta}
+	\right]
+\end{equation}
+
+I define 
+
+\begin{equation}
+	P^\alpha :=
+	\frac{\omega}{4 \pi N} G^{\alpha \beta} F_{0 \beta}
+	= \Pi^\alpha 
+	- \frac{\omega}{4 \pi N} 
+	\left( 
+	\frac{1}{2} G^{\mu \alpha \beta} 
+	- \frac{N}{2 \omega} \epsilon^{\mu \alpha \beta}
+	\right)
+	F_{\alpha \beta}
+\end{equation}
+
+and, through the usual Legendre transform, obtain the Hamiltonian 
+
+\begin{equation}
+	\begin{split}
+		H &= N
+		\left[
+		\frac{2 \pi N}{\omega} G^{-1}_{\alpha \beta} P^\alpha P^\beta
+		- \frac{\omega}{32 \pi N} G^{\mu \nu \alpha \beta} F_{\mu \nu} F_{\alpha \beta}
+		- \phi \partial_\alpha \Pi^\alpha
+		\right]\\
+		&+ N^\mu
+		\left[
+		\frac{1}{8 \pi} \epsilon^{\alpha \beta \gamma} F_{\mu \alpha} F_{\beta \gamma} 
+		+ F_{\mu \alpha} \Pi^{\alpha} - A_\mu \partial_\alpha \Pi^\alpha
+		\right]
+	\end{split}
+\end{equation}
+
+Within the community of constructive gravity, it is common not to work with the orthogonal frame components of $G$ directly, but rather with the equivalent set of fields
+
+\begin{align}
+	\bar{g}^{\alpha \beta} 
+	&:= - G^{\alpha \beta}\\
+	\bar{\bar{g}}_{\alpha \beta}
+	&:= \frac{1}{4}\left( \det{\bar{g}^{\cdot \cdot}} \right)
+	\epsilon_{\alpha \mu \nu} \epsilon_{\beta \rho \sigma}
+	G^{\mu \nu \rho \sigma}\\
+	{\bar{\bar{\bar{g}}}^\alpha}_\beta
+	&:= \frac{1}{2}\left( \det{\bar{g}^{\cdot \cdot}} \right)^{-\frac{1}{2}}
+	\epsilon_{\beta \mu \nu} G^{\alpha \mu \nu}
+	 - \delta^\alpha_\beta
+\end{align}
+
+The frame conditions \ref{frame_cond_1} and \ref{frame_cond_2} translate into
+
+\subsection{Point Particles}
+
+\subsection{Gravitational Waves}
+
+\section{Conventions}
+
+\begin{itemize}
+	\item latin indices are spacetime indices
+	\item greek indices are screen manifold indices
+\end{itemize}
+
+\begin{align} \label{conv_eps}
+	\epsilon^{0 1 2 3} =  - 1
+\end{align}
+
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
