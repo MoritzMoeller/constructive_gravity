@@ -63,10 +63,20 @@ $P$ is the only relevant geometric object; the Legendre map $L$, which maps vect
 	L^a \left( k \right) = \frac{1}{\deg{P}}\frac{\mathrm{D}^a P \left( k \right)}{P\left(k\right)}
 \end{equation}
 
-The universal action of massive point particles is
+The universal action of charged massive point particles in an electromagnetic field is
 
-\begin{equation}
-	S = m \int \mathrm{d}\tau \left(P \left( L^{-1} \left( \frac{\mathrm{d} \gamma\left(\tau \right)}{\mathrm{d}\tau} \right) \right)\right)^{\frac{1}{\deg{P}}}
+\begin{equation} \label{act_pp_univ}
+	S = m \int \mathrm{d}\tau 
+	\left(
+		P 
+		\left(
+			L^{-1} 
+			\left( 
+				\frac{\mathrm{d} \gamma\left(\tau \right)}{\mathrm{d}\tau} 
+			\right) 
+		\right)^{\frac{1}{\deg{P}}}
+		+ e A_a \frac{\mathrm{d} \gamma^a\left(\tau \right)}{\mathrm{d}\tau} 
+	\right)
 \end{equation}
 
 \section{Orbiting Charges in Metric Spacetime}
@@ -170,9 +180,17 @@ with
 \end{align}
 
 
-For scenarios including only weak gravitational fields, I obtain a decent approximation to this Hamiltonian by substituting  $g_{(3)}^{\alpha \beta}  := - \gamma^{\alpha \beta} + \varphi^{\alpha \beta}$  and  $ N = 1 + A $, and then expanding the Hamiltonian to first order. I arrive at
+For scenarios including only weak gravitational fields, I obtain a decent approximation to this Hamiltonian by substituting  
 
-\begin{equation}
+\begin{align} 
+	g_{(3)}^{\alpha \beta}  
+	&:= - \gamma^{\alpha \beta} + \varphi^{\alpha \beta} \label{def_pert_met} \\
+	N &:= 1 + A 
+\end{align}
+	
+and then expanding the Hamiltonian to first order. I arrive at
+
+\begin{equation} \label{mel_pert_ham}
 \begin{split}
 	H :=  
 	& - \left( 1 + A \right) 
@@ -194,9 +212,14 @@ For scenarios including only weak gravitational fields, I obtain a decent approx
 \end{equation}
 
 
-where $H^\alpha = \frac{1}{2}\epsilon^{\alpha \beta \gamma} F^{(3)}_{\alpha \beta} $
+where 
 
-\subsection{Point Particles}
+\begin{equation} \label{def_H_alpha}
+	H^\alpha := \frac{1}{2}\epsilon^{\alpha \beta \gamma} F^{(3)}_{\alpha \beta} 
+\end{equation}
+
+
+\subsection{Point Particles} \label{sec_pp_met}
 
 In relativistic theory, a point particle corresponds to a curve $\gamma$ in spacetime. To switch to the screen manifold formalism - where the particle is represented by a position $\lambda (t) $ which changes with the foliation parameter $t$ - I parametrise $\gamma$ with the foliation parameter $t$ and decompose the particles velocity (i.e. the vector tangent to the parametrised curve) according to
 
@@ -250,10 +273,10 @@ The linearised action reads
 
 The canonical momentum of the point mass is
 
-\begin{equation}
+\begin{equation} \label{momentum_pp_met}
 	p_\alpha := \frac{ \partial L}{\partial v^\alpha}
 	= -m \frac{v^\alpha}{\sqrt{1- v^2}} + e A_\alpha	 
-	+ \mathcal{O} \left(\varphi^2 \right)
+	+ \mathcal{O} \left(\varphi \right)
 \end{equation}
 
 I define $k_\alpha = p_\alpha - e A_\alpha$, expand $v^\alpha = v^\alpha_0 + v^\alpha_1 + \dots $ in orders of $\varphi$ and, by virtue of
@@ -266,13 +289,13 @@ I define $k_\alpha = p_\alpha - e A_\alpha$, expand $v^\alpha = v^\alpha_0 + v^\
 
 I obtain
 
-\begin{equation}
-	v_\alpha = - \frac{k_\alpha}{E_k} + \mathcal{O} \left(\varphi^2 \right)
+\begin{equation} \label{veloc_pp_met}
+	v_\alpha = - \frac{k_\alpha}{E_k} + \mathcal{O} \left(\varphi \right)
 \end{equation}
 
 where $E_k := \sqrt{k^2+ m^2}$. Accommodatingly, knowledge of the zeroth order of $v^\alpha$ suffices to obtain the linearised Hamiltonian throught the Legendre transform:
 
-\begin{equation}
+\begin{equation} \label{ham_pp_met}
 	H := p_\alpha v^\alpha - L  
 	= - \left( 1 + A \right) \left( E_k + e \phi \right)
 	- N^\alpha p_\alpha + \frac{1}{2 E_k} \varphi_{\alpha \beta} k^\alpha k^\beta + \mathcal{O} \left(\varphi^2 \right)
@@ -285,7 +308,7 @@ where all occurring fields are evaluated at the position $\lambda$ of the partic
 The Hamiltonian of the complete system containing both charged point masses and electromagnetic fields is the sum of the respective Hamiltonians:
 
 \begin{equation}
-	H_{Matter}  = \sum_i H^{(i)}_{Point \,Particle} + H_{Electromagnetism}
+	H_{\text{Matter}}  = \sum_i H^{(i)}_{\text{Point particle}} + H_{\text{Electromagnetism}}
 \end{equation}
 
 
@@ -396,7 +419,7 @@ How would gravity work if the electromagnetic field obeyed the equations of moti
 
 In this section, I shall firstly implement the screen manifold formalism for birefringent electrodynamics. Then, I shall investigate the affiliated point particle theory, which also features the double cone as its causal structure. Finally, I shall investigate how the system I presented in sec. \ref{sec_mot_bin} generates waves in the gravitational fields that make up the causal structure.
 
-\subsection{The Electromagnetic Field}
+\subsection{The Electromagnetic Field} \label{sec_em_am}
 
 Birefringent electrodynamics is a generalisation of Maxwells electrodynamics: just as Maxwells theory, birefringent electrodynamics features a linear equation of motion and thus shares the superposition principle, but in contrast to Maxwell theory, it allows for birefringence in vacua.
 
@@ -540,9 +563,346 @@ Within the community of constructive gravity, it is common not to work with the 
 
 The frame conditions \ref{frame_cond_1} and \ref{frame_cond_2} translate into
 
-\subsection{Point Particles}
+\begin{align}
+	{\bar{\bar{\bar{g}}}^\alpha}_\alpha  &= 0 \\
+	{\bar{\bar{\bar{g}}}^\alpha}_\mu \bar{g}^{\mu \beta} 
+	&= {\bar{\bar{\bar{g}}}^\beta}_\mu \bar{g}^{\mu \alpha} 
+\end{align}
+
+Of course, the components of $G$ might be reassembled from the fields $\bar{g}$, $\bar{\bar{g}}$ and $\bar{\bar{\bar{g}}}$ via
+
+\begin{align}
+	G^{\alpha \beta} &= - \bar{g}^{\alpha \beta} \\
+	G^{\beta \gamma \delta} 
+	&= \left( \det{\bar{g}^{\cdot \cdot}} \right)^{\frac{1}{2}}
+	\epsilon^{\alpha \gamma \delta} 
+	\left( 
+	{\bar{\bar{\bar{g}}}^\beta}_\alpha 
+	+ \delta^\beta_\alpha 
+	\right) \\
+	G^{\alpha \beta \gamma \delta } &= 
+	\epsilon^{\alpha \beta \mu} \epsilon^{\gamma \delta \nu}
+	\left( \det{\bar{g}^{\cdot \cdot}} \right) 
+	\bar{\bar{g}}_{\mu \nu}
+\end{align}
+
+In terms of $\bar{g}$, $\bar{\bar{g}}$ and $\bar{\bar{\bar{g}}}$, the density $\omega$ reads
+
+\begin{equation}
+	\omega = N \left( \det{\bar{g}^{\cdot \cdot}}\right)^{-\frac{1}{2}}
+\end{equation}
+
+and the Hamiltonian becomes
+
+\begin{equation}
+	\begin{split}
+		H =
+		- N [
+		&2 \pi \left( \det{\bar{g}^{\cdot \cdot}}\right)^{\frac{1}{2}}
+		\bar{g}^{-1}_{\alpha \beta} 
+		\left( 
+		\Pi^\alpha 
+		- \frac{1}{4 \pi}  {\bar{\bar{\bar{g}}}^\alpha }_\mu H^\mu
+		\right)
+		\left( 
+		\Pi^\beta
+		- \frac{1}{4 \pi}  {\bar{\bar{\bar{g}}}^\beta }_\nu H^\nu
+		\right) \\
+		&- \frac{1}{8 \pi} 
+		\left( \det{\bar{g}^{\cdot \cdot}}\right)^{\frac{1}{2}}
+		\bar{\bar{g}}_{\alpha \beta} H^\alpha H^\beta 
+		- \phi \partial_\alpha \Pi^\alpha
+		]\\
+		&- N^\mu \left[ 
+		\epsilon_{\mu \alpha \beta} H^\alpha \Pi^\beta + A_\mu \partial_\alpha \Pi^\alpha
+		\right]
+	\end{split}
+\end{equation}
+
+where $H^\alpha$ is defined in eq. \ref{def_H_alpha}.
+
+If the gravitational fields are very weak, neglecting all but linear terms in these fields yields a good approximation. The parametrisation used for this perturbative approach is
+
+\begin{align}
+	\bar{g}^{\alpha \beta} 
+	&:= \gamma^{\alpha \beta} + \bar{\varphi}^{\alpha \beta}\\
+	\bar{\bar{g}}_{\alpha \beta}
+	&:= \gamma_{\alpha \beta} + \bar{\bar{\varphi}}_{\alpha \beta}\\
+	{\bar{\bar{\bar{g}}}^\alpha}_\beta
+	&:= {\bar{\bar{\bar{\varphi}}}^\alpha}_\beta
+	+ \mathcal{O}\left(
+	\bar{\bar{\bar{\varphi}}}^2 
+	\right)
+\end{align}
+
+Substituting this into the Hamiltonian, and neglecting all but the leading, linear order in $\varphi$, yields an approximate Hamiltonian which is valid as long as the gravitational fields are small enough, eg. $\varphi \ll 1$.
+
+Using Jacobi's formula, I obtain
+
+\begin{equation}
+	\det{\bar{g}^{\cdot \cdot}} 
+	= 1 + \gamma_{\alpha \beta} \bar{\varphi}^{\alpha \beta}
+	+ \mathcal{O} \left( \varphi^2 \right)
+\end{equation}
+
+and arrive at
+
+\begin{equation} \label{geld_pert_ham}
+	\begin{split}
+		H = 
+		- \left( 1 + A \right) 
+		\left[
+		\gamma_{\alpha \beta}
+		\left( 
+		2 \pi \Pi^\alpha \Pi^\beta
+		+ \frac{1}{8 \pi} H^\alpha H^\beta 
+		\right)
+		+ \phi \partial_\alpha \Pi^\alpha
+		\right] \\
+		- \frac{1}{2} \left( 
+		\bar{\bar{\varphi}}^{\alpha \beta} 
+		- \bar{\varphi}^{\alpha \beta}
+		\right)
+		 \left( 
+		 \delta^\alpha_\sigma \delta^\beta_\tau 
+		- \frac{1}{2} \gamma^{\alpha \beta } \gamma_{\sigma \tau} 
+		\right) \\
+		\times \left[
+		2 \pi 
+		\Pi^\alpha \Pi^\beta
+		+ \frac{1}{8 \pi} 
+		H^\alpha H^\beta 
+		\right] \\
+		+ \frac{1}{2} \left( 
+		\bar{\bar{\varphi}}^{\alpha \beta} 
+		+ \bar{\varphi}^{\alpha \beta}
+		\right) \\
+		\times \left[
+		2 \pi 
+		\left( 
+		\delta^\alpha_\sigma \delta^\beta_\tau 
+		- \frac{1}{2} \gamma^{\alpha \beta } \gamma_{\sigma \tau} 
+		\right)
+		\Pi^\alpha \Pi^\beta
+		+ \frac{1}{8 \pi} 
+		 \left( 
+		- \delta^\alpha_\sigma \delta^\beta_\tau 
+		- \frac{1}{2} \gamma^{\alpha \beta } \gamma_{\sigma \tau} 
+		\right)
+		H^\alpha H^\beta 
+		\right] \\
+		+ {\bar{\bar{\bar{\varphi}}}^\beta}_\mu 
+		\left(
+		\delta^{\mu}_\nu \delta^\alpha_\beta 
+		- \delta^{\mu}_\beta \delta^\alpha_\nu
+		\right) H^\nu \Pi_\alpha \\
+		- N^\mu
+		\left[
+		\epsilon_{\mu \alpha \beta} H^\alpha \Pi^\beta
+		+ A_\mu \partial_\alpha \Pi^\alpha
+		\right]
+	\end{split}
+\end{equation}
+
+Confidence about this result arises in comparison with the metric case: Choosing
+
+\begin{equation}
+	G^{a b c d} = 
+	g^{a c} g^{b d} - g^{a d}g^{b c} 
+	- \left(
+	-\det{g^{\cdot \cdot}}
+	\right) ^{\frac{1}{2}}
+	\epsilon^{ a b c d}
+\end{equation}
+
+turns birefringent electrodynamics into electrodynamics à la Maxwell - $G$ is then called a metric induced area metric. Using this equation, I determine the value of the area metric gravitational fields in the case where $G$ is metric induced, and obtain
+
+\begin{align}
+	\frac{1}{2} 
+	\left( 
+	\bar{\bar{\varphi}}^{\alpha \beta} 
+	- \bar{\varphi}^{\alpha \beta}
+	\right) 
+	&= \varphi^{\alpha \beta}\\
+	\frac{1}{2} 
+	\left( 
+	\bar{\bar{\varphi}}^{\alpha \beta} 
+	+ \bar{\varphi}^{\alpha \beta}
+	\right) 
+	&= 0 \\
+	{\bar{\bar{\bar{\varphi}}}^\alpha}_\beta 
+	&= 0
+\end{align}
+
+where $\varphi$ is defined in eq. \ref{def_pert_met}. Substituting this into the Hamiltonian \ref{geld_pert_ham} yields the Hamiltonian of Maxwell electrodynamics \ref{mel_pert_ham}, prooving at least partial correctness of the result.
+
+\subsection{Point Particles} \label{sec_pp_am}
+
+The point particle theory that matches birefringent electrodynamics, i.e. that shares the same causality (and, for massless point particles, constitutes the geometric optical limit of birefringent electrodynamics) is again, as in section \ref{sec_pp_met} formulated as soon as the causal structure $P$ of birefringent electrodynamics is inserted into the universal point particle action \ref{act_pp_univ}.
+
+In terms of the area metric $G$ that first appeared in the action \ref{act_gled}, the principle polynomial $P$ which encodes the causal structure reads
+
+\begin{equation}
+\begin{split}
+	P \left( k \right)
+	&= 
+	- \frac{4 !}{\left( \epsilon_{e f g h} G^{e f g h }\right)^2}
+	\epsilon_{m n p q}
+	\epsilon_{r s t u}
+	G^{m n r ( a}
+	G^{b | p s | c}
+	G^{d ) q t u }
+	k_a k_b k_c k_d\\
+	&=: P^{a b c d} k_a k_b k_c k_d
+\end{split}	
+\end{equation}
+
+To substitute this into the universal point particle action, I need the components of $P$  in the foliation frame. These have been determined by H. M. Rieser and others, whom I trust to provide correct expressions.
+
+If, to match the accuracy of the  Hamiltonian \ref{geld_pert_ham}, one discards all but the linear oder in the gravitational fields, one obtains
+
+\begin{align}
+	P \left( \kappa, \kappa, \kappa, \kappa \right)
+	&= 1 - 4A  \label{p0000} \\
+	P \left( \tilde{\epsilon}^\alpha, \kappa, \kappa, \kappa \right)
+	&= - N^\alpha \\
+	P \left( \tilde{\epsilon}^\alpha, \tilde{\epsilon}^\beta, \kappa, \kappa \right)
+	&= - \frac{1}{3} \gamma^{\alpha \beta}
+	+ \frac{2}{3} A \gamma^{\alpha \beta} \\
+	&+ \frac{1}{6} 
+	\left[
+		- 
+		\left( 
+			\delta^\alpha_\mu \delta^\beta_\nu 
+			+ \gamma^{\alpha \beta} \gamma_{\mu \nu} 
+		\right)
+		\bar{\varphi}^{\mu \nu}
+		+
+		\left( 
+			\delta^\alpha_\mu \delta^\beta_\nu 
+			- \gamma^{\alpha \beta} \gamma_{\mu \nu} 
+		\right)
+		\bar{\bar{\varphi}}^{\mu \nu}
+	\right] \\
+	P \left( \tilde{\epsilon}^\alpha, \tilde{\epsilon}^\beta, \tilde{\epsilon}^\gamma, \kappa \right)
+	&= N^{( \alpha}\gamma^{\beta \gamma )}\\
+	P \left( \tilde{\epsilon}^\alpha, \tilde{\epsilon}^\beta, \tilde{\epsilon}^\gamma, \tilde{\epsilon}^\delta \right)
+	&= \gamma^{( \alpha \beta} \gamma^{\gamma \delta )}
+	+ 
+	\gamma^{( \alpha \beta}
+	\left( 
+		\delta^\gamma_\mu \delta^{\delta ) }_\nu 
+		+ \gamma^{\gamma \delta ) } \gamma_{\mu \nu} 
+	\right)
+	\bar{\varphi}^{\mu \nu} \\
+	&- 
+	\gamma^{( \alpha \beta}
+	\left( 
+		\delta^\gamma_\mu \delta^{\delta ) }_\nu 
+		- \gamma^{\gamma \delta ) } \gamma_{\mu \nu} 
+	\right)
+	\bar{\bar{\varphi}}^{\mu \nu} \label{pabcd}
+\end{align}
+
+I read off the zeroth order
+
+\begin{equation}
+	P^{a b c d} = \eta^{ ( a b } \eta^{ c d )} + \Sigma^{ a b c d}
+\end{equation}
+
+where $\Sigma \sim \mathcal{O} \left( \varphi \right)$.
+
+Using this parametrisation and starting from the universal point particle action, F. P. Schuller obtained
+
+\begin{equation}
+	S = 
+	m \int \mathrm{d} \tau 
+	\left[
+		\left( 
+			\eta_{a b} \gamma^{\prime a} \gamma^{\prime b} 
+		\right)^{\frac{1}{2}}
+	 -
+	 \frac{1}{4}
+	 \frac{
+	 \Sigma_{a b c d}
+	 \gamma^{\prime a} \gamma^{\prime b} \gamma^{\prime c} \gamma^{\prime d}
+	 }{\left( 
+			\eta_{a b} \gamma^{\prime a} \gamma^{\prime b} 
+		\right)^{\frac{3}{2}}}
+		+
+		\mathcal{O} \left( \varphi^2 \right)
+		+ e \gamma^{\prime a} A_a
+	\right]
+\end{equation}
+
+where $\gamma^\prime := \frac{\mathrm{d} \gamma \left( \tau \right)}{\mathrm{d} \tau}$. Just as in section \ref{sec_pp_met}, I proceed by parametrising $\gamma$ with the foliation parameter $t$ and  expressing the action in the foliation frame. I yield
+
+\begin{equation}
+\begin{split}
+	S = 
+	m \int \mathrm{d} t 
+	[
+		\left( 
+			1 - v^2
+		\right)^{\frac{1}{2}}
+	&-
+	\frac{1}{4}
+	\frac{
+	\sum_{n = 0}^4 
+	\begin{pmatrix}
+		4\\ n
+	\end{pmatrix}
+	 \Sigma_{\alpha_1 \dots \alpha_n 0 \dots 0}
+	 v^{\alpha_1} \dots v^{\alpha_n}
+	 }{\left( 
+			1 - v^2
+		\right)^{\frac{3}{2}}} \\
+		&+ e \left(
+			\phi + A \phi +  A_\alpha \left( N^\alpha + v^\alpha\right)
+		\right) 
+	]
+	+
+	\mathcal{O} \left( \varphi^2 \right)
+\end{split}
+\end{equation}
+
+where again $v = \frac{\mathrm{d} \lambda (t)}{\mathrm{d} t } =: \dot{\lambda} (t) $ and $v^2 := \gamma_{\alpha \beta} v^\alpha v^\beta $. 
+
+I proceed just as in section \ref{sec_pp_met}, and find that I obtain the same results concerning the momenta and velocities to order $\mathcal{O} \left( 1
+	\right)$ as given in eq. \ref{momentum_pp_met} - \ref{veloc_pp_met}. Again, this knowledge suffices to derive the Hamiltonian to order  $\mathcal{O} \left( \varphi \right)$ through the Legendre transform.
+	
+	After inserting the expressions \ref{p0000} - \ref{pabcd}, the approximate Hamiltonian for a charged point mass in an electromagnetic field that obeys the causal structure of birefringent electrodynamics reads
+	
+\begin{equation}
+	\begin{split}
+		H = 
+		&- \left( 1 + A \right) \left( E_k + e \phi \right) 
+		- N^\alpha p_\alpha \\
+		&- \frac{1}{2 E_k} \left[ 
+			\frac{1}{2} 
+			\left( 
+				\bar{\varphi}^{\alpha \beta} 
+				- \bar{\bar{\varphi}}^{\alpha \beta}
+			\right) 
+			k_\alpha k_\beta
+			+
+			\frac{1}{2} 
+			\left( 
+				\bar{\varphi}^{\alpha \beta} 
+				+ \bar{\bar{\varphi}}^{\alpha \beta}
+			\right) 
+			\gamma_{\alpha \beta} \gamma^{\mu \nu}
+			k_\mu k_\nu
+		\right]
+	\end{split}
+\end{equation}
+
+with the same notational conventions as in eq. \ref{ham_pp_met}
 
 \subsection{Gravitational Waves}
+
+Collecting the results from sec. \ref{sec_em_am} and \ref{sec_pp_am}, I am now in possession of complete matter Hamiltonian.
+
 
 \section{Conventions}
 
@@ -554,6 +914,8 @@ The frame conditions \ref{frame_cond_1} and \ref{frame_cond_2} translate into
 \begin{align} \label{conv_eps}
 	\epsilon^{0 1 2 3} =  - 1
 \end{align}
+
+
 
 \end{document}
 

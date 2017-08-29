@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.23)  28 AUG 2017 16:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.23)  29 AUG 2017 14:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -95,31 +95,34 @@ LaTeX Font Info:    ... okay on input line 5.
  [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6]
-Overfull \hbox (7.0713pt too wide) in paragraph at lines 306--307
+Overfull \hbox (7.0713pt too wide) in paragraph at lines 329--330
 []\OT1/cmr/m/n/10.95 Using the Hamil-to-nian field equa-tions $[] = \OML/cmm/m/it/10.95 ^^NH=^^N\OT1/cmr/m/n/10.95 ^^E[]$ and $[] = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 ^^NH=^^NA[]$\OT1/cmr/m/n/10.95 ,
  []
 
-[7] [8] [9] [10]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 550.
+[7] [8] [9] [10] [11] [12]
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no   in font cmr10!
+ [13] [14] [15]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 910.
  (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 550.
- [11] [12] (/Users/mo/Desktop/CGG/constructive_gravity_rep/gravitational_wave_generation/.texpadtmp/The Generation of Waves in Gravitational Fields by Orbiting Charges.aux) ) 
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 910.
+ [16] (/Users/mo/Desktop/CGG/constructive_gravity_rep/gravitational_wave_generation/.texpadtmp/The Generation of Waves in Gravitational Fields by Orbiting Charges.aux) ) 
 Here is how much of TeX's memory you used:
- 860 strings out of 493117
- 10882 string characters out of 6135433
- 70932 words of memory out of 5000000
- 4378 multiletter control sequences out of 15000+600000
+ 873 strings out of 493117
+ 11042 string characters out of 6135433
+ 72932 words of memory out of 5000000
+ 4391 multiletter control sequences out of 15000+600000
  8263 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,17n,24p,664b,188s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,22n,26p,664b,226s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on "/Users/mo/Desktop/CGG/constructive_gravity_rep/gravitational_wave_generation/.texpadtmp/The Generation of Waves in Gravitational Fields by Orbiting Charges.pdf" (12 pages, 147799 bytes).
+Output written on "/Users/mo/Desktop/CGG/constructive_gravity_rep/gravitational_wave_generation/.texpadtmp/The Generation of Waves in Gravitational Fields by Orbiting Charges.pdf" (16 pages, 164127 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 96 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
